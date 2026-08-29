@@ -1,0 +1,6 @@
+[submodule "self_energy_solver"]
+	path = self_energy_solver
+	url = https://github.com/srujithanchuri/self-energy-solver
+[submodule "susceptibility"]
+	path = susceptibility
+	url = https://github.com/srujithanchuri/rpa-susceptibility-solver
