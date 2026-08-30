@@ -60,8 +60,8 @@ We take different approches to handle these singularities in the self energy and
 ## Project Structure & Solvers
 
 Because selfenergy and susceptibility calculations use wildly different numerical techniques to handle their respective singularities, they are implemented as independent solvers in their own submodules.
-* **[Self-Energy Solver](self_energy_solver/)**: Calculates self-energy corrections ($\Sigma^R$) using Fast Fourier Transforms (FFTs) to evaluate complex $\mathcal{O}(N^6)$ momentum convolutions efficiently in real space (CuPy/GPU accelerated).
-* **[RPA Susceptibility Solver](susceptibility/)**: Computes susceptibility ($\chi_0$) using the geometrical Linear Tetrahedron Method (LTM) to avoid artificial broadening, and constructs the fully renormalized interacting susceptibility via the Random Phase Approximation (RPA).
+* **[Self-Energy Solver](https://github.com/srujithanchuri/self-energy-solver)**: Calculates self-energy corrections ($\Sigma^R$) using Fast Fourier Transforms (FFTs) to evaluate complex $\mathcal{O}(N^6)$ momentum convolutions efficiently in real space (CuPy/GPU accelerated).
+* **[RPA Susceptibility Solver](https://github.com/srujithanchuri/susceptibility-solver)**: Computes susceptibility ($\chi_0$) using the geometrical Linear Tetrahedron Method (LTM) to avoid artificial broadening, and constructs the fully renormalized interacting susceptibility via the Random Phase Approximation (RPA).
 * **`conductivity_solver/`** *(In Development)*: A new solver being built from scratch to compute the optical/DC conductivity of the system.
 * **`results/`**: A top-level directory intended for aggregated, multi-panel plots that tie the data from all independent solvers together into a unified physical picture.
 
