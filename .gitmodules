@@ -3,4 +3,4 @@
 	url = https://github.com/srujithanchuri/self-energy-solver
 [submodule "susceptibility"]
 	path = susceptibility
-	url = https://github.com/srujithanchuri/rpa-susceptibility-solver
+	url = https://github.com/srujithanchuri/RPA-susceptibility-solver
