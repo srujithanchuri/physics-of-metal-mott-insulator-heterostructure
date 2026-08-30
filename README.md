@@ -56,7 +56,7 @@ Because both the self-energy and susceptibility calculations are riddled with sh
 ## Project Structure & Solvers
 
 Because self-energy and susceptibility calculations use wildly different numerical techniques to handle their respective singularities, they are implemented as independent solvers in their own Git submodules.
-* **Self-Energy Solver** (`self_energy_solver/`): Computes the self-energy corrections ($\Sigma^R$) by evaluating second-order Feynman diagrams. It uses Fast Fourier Transforms (FFTs) and Keldysh real-time Green's functions to efficiently evaluate $\mathcal{O}(N^6)$ momentum convolutions in real space.
+* **Self-Energy Solver** (`self_energy/`): Computes the self-energy corrections ($\Sigma^R$) by evaluating second-order Feynman diagrams. It uses Fast Fourier Transforms (FFTs) and Keldysh real-time Green's functions to efficiently evaluate $\mathcal{O}(N^6)$ momentum convolutions in real space.
 * **RPA Susceptibility Solver** (`susceptibility/`): Computes the bare and interacting magnetic susceptibility ($\chi$). It uses the geometrical Linear Tetrahedron Method (LTM) to analytically integrate out the exact $0/0$ singularities without relying on artificial broadening, allowing for precise mapping of phase boundaries.
 * **`conductivity_solver/`** *(In Development)*: A new solver being built from scratch to compute the optical/DC conductivity of the system.
 * **`results/`**: A top-level directory intended for aggregated, multi-panel plots that tie the data from all independent solvers together into a unified physical picture.

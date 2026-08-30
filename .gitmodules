@@ -1,5 +1,5 @@
 [submodule "self_energy_solver"]
-	path = self_energy_solver
+	path = self_energy
 	url = https://github.com/srujithanchuri/self-energy-solver
 [submodule "susceptibility"]
 	path = susceptibility
