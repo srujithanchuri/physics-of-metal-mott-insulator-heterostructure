@@ -17,7 +17,7 @@ exploring metallic magnetic phase transitions within Hubbard systems.
 ## The Physical Model
 The system consists of a metallic layer ($c$) and two layers of a Mott insulator ($S_1$ and $S_2$).
 
-![Model](attachments/Screenshot%202026-08-30%20055001.png)
+![Model](attachments/055001.png)
 
 The full Hamiltonian of the system is given by:
 
@@ -40,8 +40,7 @@ Where:
 ### Spin Subsystem (Mott Insulator)
 Isolating just the Mott insulator portion of the Hamiltonian, we can represent the spins using triplon operators 
 ( $t_{\mathbf{k}\alpha}$ ) and perform a Bogoliubov transformation to diagonalize the spin Hamiltonian. The resulting Hamiltonian in momentum space is:
-
-![Spin_Model](attachments/Screenshot%202026-08-30%20055025.png)
+![Spin_Model](attachments/055025.png)
 
 $$
 \begin{aligned}
