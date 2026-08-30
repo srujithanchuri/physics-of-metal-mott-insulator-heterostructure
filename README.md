@@ -67,6 +67,6 @@ Because this project utilizes Git Submodules to link to the independent solvers,
 
 To clone this master repository and automatically pull down all the solver code, run:
 ```bash
-git clone --recurse-submodules https://github.com/srujithanchuri/main_thesis.git
+git clone --recurse-submodules https://github.com/srujithanchuri/physics-of-metal-mott-insulator-heterostructure.git
 ```
 *(If you already cloned it normally and the folders are empty, you can populate them by running `git submodule update --init --recursive`)*.
