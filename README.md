@@ -49,19 +49,16 @@ $$
 \end{aligned}
 $$
 
-To study electronic properties, we calculate the retarded self-energy corrections ($\Sigma^R$) to the metallic Green's function 
-($G^R$) upto second order in the Kondo coupling.  This allows us to calculate the spectral properties of the metallic layer. 
-We then use Random Phase approximation(RPA) to calculate the interacting susceptibility ($\chi$). The onset of a magnetic 
-instability is mathematically signaled by a divergence in this RPA susceptibility at a specific ordering wavevector.
-The self energy and susceptibility calculations are riddled with poles and singularities which require careful numerical treatment. 
-We take different approches to handle these singularities in the self energy and susceptibility calculations.
+To study electronic properties, we calculate the retarded self-energy corrections ($\Sigma^R$) to the metallic Green's function ($G^R$) up to second order in the Kondo coupling. This allows us to calculate the spectral properties of the metallic layer. We then use the Random Phase Approximation (RPA) to calculate the interacting susceptibility ($\chi$). The onset of a magnetic instability is mathematically signaled by a divergence in this RPA susceptibility at a specific ordering wavevector.
+
+Because both the self-energy and susceptibility calculations are riddled with sharp singularities, they require extremely careful numerical treatment. We take distinctly different algorithmic approaches to safely handle these singularities in each independent solver.
 
 
 ## Project Structure & Solvers
 
-Because selfenergy and susceptibility calculations use wildly different numerical techniques to handle their respective singularities, they are implemented as independent solvers in their own submodules.
-* **[Self-Energy Solver](https://github.com/srujithanchuri/self-energy-solver)**: Calculates self-energy corrections ($\Sigma^R$) using Fast Fourier Transforms (FFTs) to evaluate complex $\mathcal{O}(N^6)$ momentum convolutions efficiently in real space (CuPy/GPU accelerated).
-* **[RPA Susceptibility Solver](https://github.com/srujithanchuri/susceptibility-solver)**: Computes susceptibility ($\chi_0$) using the geometrical Linear Tetrahedron Method (LTM) to avoid artificial broadening, and constructs the fully renormalized interacting susceptibility via the Random Phase Approximation (RPA).
+Because self-energy and susceptibility calculations use wildly different numerical techniques to handle their respective singularities, they are implemented as independent solvers in their own Git submodules.
+* **Self-Energy Solver** (`self_energy_solver/`): Computes the self-energy corrections ($\Sigma^R$) by evaluating second-order Feynman diagrams. It uses Fast Fourier Transforms (FFTs) and Keldysh real-time Green's functions to efficiently evaluate $\mathcal{O}(N^6)$ momentum convolutions in real space.
+* **RPA Susceptibility Solver** (`susceptibility/`): Computes the bare and interacting magnetic susceptibility ($\chi$). It uses the geometrical Linear Tetrahedron Method (LTM) to analytically integrate out the exact $0/0$ singularities without relying on artificial broadening, allowing for precise mapping of phase boundaries.
 * **`conductivity_solver/`** *(In Development)*: A new solver being built from scratch to compute the optical/DC conductivity of the system.
 * **`results/`**: A top-level directory intended for aggregated, multi-panel plots that tie the data from all independent solvers together into a unified physical picture.
 
