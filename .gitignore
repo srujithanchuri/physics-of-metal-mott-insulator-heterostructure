@@ -1,6 +1,9 @@
 results/
 *.pptx
 .venv/
+.venv_cpu/
 .idea/
 *.xml
 1documents/
+deployment/dist
+deployment/build
